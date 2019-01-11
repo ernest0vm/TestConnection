@@ -1,0 +1,42 @@
+﻿@model IEnumerable<TestConnection.Models.Users>
+
+<table class="table table-hover">
+    <tr>
+        <th
+            ID USER
+        </th>
+        <th>
+            USER
+        </th>
+        <th>
+            MAIL
+        </th>
+        <th>
+            PASSWORD
+        </th>
+        </tr>
+
+    @foreach (var Item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => Item.IdUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Item.Usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Item.Contraseña)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = Item.IdUser }) -
+                @Html.ActionLink("Details", "Details", new { id = Item.IdUser }) -
+                @Html.ActionLink("Delete", "Delete", new { id = Item.IdUser })
+            </td>
+        </tr>
+    }
+</table>
+   
